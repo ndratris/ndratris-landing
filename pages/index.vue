@@ -1,9 +1,8 @@
 <template>
+<div>
+  <Hero />
+</div>
 </template>
-<template>
-<Hero />
-</template>
-
 <style>
   .red {
     color: red;

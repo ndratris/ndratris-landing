@@ -18,10 +18,12 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/main.scss',
+    '@/assets/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
+  plugins: ['~/plugins/bootstrap.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -36,9 +38,21 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
   ],
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
+// specify module rules for css and scss
+module: {
+  rules: [
+    {
+      test: /\.s[ac]ss$/i,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+    },
+  ],
+},
+  bootstrapVue: {
+    bootstrapCSS: false,
+    bootstrapVueCSS: false
   }
+
+
+
 
 }
